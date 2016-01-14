@@ -1,2 +1,9 @@
 language: go
 script: go get -v && go test -v && go build
+deploy:
+  provider: releases
+  api_key: "a7cf550dfae3e325f899b6717ce88f3ea626218f"
+  file: "WhatIsMyIp"
+  skip_cleanup: true
+  on:
+    tags: true
