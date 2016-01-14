@@ -1,9 +1,12 @@
 language: go
 script: go get -v && go test -v && go build
+before_deploy:
+  - export RELEASE_PKG_FILE=$(ls $TRAVIS_BUILD_DIR/*)
+  - echo "Generated files= $RELEASE_PKG_FILE"
 deploy:
   provider: releases
   api_key: "a7cf550dfae3e325f899b6717ce88f3ea626218f"
-  file: "WhatIsMyIp"
+  file: "$TRAVIS_BUILD_DIR/WhatIsMyIp"
   skip_cleanup: true
   on:
     tags: true
