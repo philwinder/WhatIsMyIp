@@ -5,7 +5,7 @@ before_deploy:
   - echo "Generated files= $RELEASE_PKG_FILE"
 deploy:
   provider: releases
-  api_key: "182bd35cae1b7358ffe54ff1dc7df49161781229"
+  api_key: "$GITHUB_OAUTH_TOKEN"
   file: "$TRAVIS_BUILD_DIR/WhatIsMyIp"
   skip_cleanup: true
   on:
