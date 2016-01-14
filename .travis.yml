@@ -1,2 +1,2 @@
 language: go
-script: go get . -v && go test -v && go build
+script: go get -v && go test -v && go build
