@@ -1,8 +1,7 @@
 language: go
-script: go get -v && go test -v && go build
+script: go get -v && go test -v && go build -o $TRAVIS_BUILD_DIR/WhatIsMyIp
 before_deploy:
-  - export RELEASE_PKG_FILE=$(ls $TRAVIS_BUILD_DIR/*)
-  - echo "Generated files= $RELEASE_PKG_FILE"
+  - echo $(ls $TRAVIS_BUILD_DIR)
 deploy:
   provider: releases
   api_key: "$GITHUB_OAUTH_TOKEN"
