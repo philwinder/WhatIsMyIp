@@ -1,4 +1,4 @@
-package WhatIsMyIp
+package main
 
 import (
 	"encoding/json"
